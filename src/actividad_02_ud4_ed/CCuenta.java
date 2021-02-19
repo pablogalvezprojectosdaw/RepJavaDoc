@@ -11,14 +11,17 @@ package actividad_02_ud4_ed;
 
 public class CCuenta {
 
-
+    /** Definición de atributos de la clase CCuenta
+     * 
+     */
   
   protected String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
-  
+   /** Contructor sin argumentos
+    */
     public CCuenta ()
     {
     }
@@ -59,13 +62,20 @@ public class CCuenta {
         return nombre;
     }
 
-    
+     /**
+     * metodo que devuelve el saldo disponible
+     * @return <code>saldo</code> Saldo disponible
+     */
      public double estado ()
     {
         return saldo;
     }
 
-    
+     /**
+     * metodo que ingresa la cantidad
+     * @param cantidad Dinero a ingresar
+     * @throws Exception controlamos que no se introduzcan cantidades negativas
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0){
@@ -74,6 +84,11 @@ public class CCuenta {
     }
 
    
+     /**
+     * metodo que retira la cantidad
+     * @param cantidad cantidad a retirar
+     * @throws Exception Controlamos que no se retiren cantidades erróneas
+     */
     public void retirar (double cantidad) throws Exception
     {
         if (cantidad < 0){
@@ -83,27 +98,44 @@ public class CCuenta {
         setSaldo(saldo - cantidad);
     }
     
+    
+     /**
+     * metodo que devuelve el numero de cuenta
+     * @return <code>cuenta</code> Saldo disponible
+     */
     public String obtenerCuenta ()
     {
         return cuenta;
     }
 
-  
+  /**
+   * asignamos el numero de la cuenta
+   * @param cuenta numero de la cuenta
+  */
   public void setCuenta(String cuenta) {
     this.cuenta = cuenta;
   }
 
-  
+  /**
+   * asignamos el numero de saldo
+   * @param saldo numero de saldo
+  */
   public void setSaldo(double saldo) {
     this.saldo = saldo;
   }
 
- 
+  /**
+   * devuelve el tipo de interés
+   * @return <code>tipoInterés</code> Porcentaje a aplicar
+  */
   public double getTipoInterés() {
     return tipoInterés;
   }
 
-  
+  /**
+   * asiganmos el tipo de interés
+   * @param tipoInterés Porcentaje a aplicar
+  */
   public void setTipoInterés(double tipoInterés) {
     this.tipoInterés = tipoInterés;
   }
